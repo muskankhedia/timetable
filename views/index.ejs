@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>
+    Exam Attendance Details
+    </title>
+    <head>
+    <link rel = "stylesheet" href="./stylesheets/style.css">
+    <link rel = "stylesheet" href="./stylesheets/bootstrap.min.css">
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    </head>
+    <body>
+
+<div class="login-page">
+<div class="form">
+<section class="content-section bg-light" id="search">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <form method="POST" action="/result">
+            <fieldset class="inline-fields stream mb-5">
+              <h3>Select the Stream</h3>
+                  <div class = "row col-sm-12">
+                      <div class = "row col-sm-12 col-md-12">
+                          <select class="form-control" id="stream_select" name="stream_select">
+                              <option selected disabled>Please Select the Semester</option>
+                              <% for(var i = 0; i < streams.length; i++) {%>
+                                <option value="<%=streams[i]['STREAM']%>" id="streamid" name="streamid"><%=streams[i]['STREAM']%> Stream</option>
+                              <%}%>>
+                          </select>
+                      </div>
+                  </div>
+            </fieldset>
+
+            <fieldset class="inline-fields sem mb-5">
+              <h3>Select the Semester</h3>
+                  <div class = "row col-sm-12">
+                      <div class = "row col-sm-12 col-md-5">
+                          <select class="form-control" id="sem_select" name="sem_select">
+                              <option selected disabled>Please Select the Semester</option>
+                              <% for(var i = 0; i < sems.length; i++) {%>
+                                <option value="<%=sems[i]['SEM']%>" id="semid" name="semid"><%=sems[i]['SEM']%> Semester</option>
+                              <%}%>>
+                          </select>
+                      </div>
+                  </div>
+            </fieldset>
+          <fieldset class="inline-fields branch">
+              <h3>Select the Branch</h3>
+                <div class = "row col-sm-12 mb-5">
+                    <div class = "row col-sm-12 col-md-12">
+                        <select class="form-control" id="branch_select" name="branch_select">
+                          <option selected disabled>Please Select the Branch</option>
+                          <% for(var i = 0; i < branches.length; i++) {%>
+                            <option value="<%=branches[i]['BRANCH']%>" id="branchid" name="branchid"><%=branches[i]['BRANCH']%></option>
+                          <%}%>>
+                        </select>
+                    </div>
+                </div>
+          </fieldset>
+          
+        </form>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+          </select>
+          <br>
+          <label>Branch Name:</label> 
+          <select name = "branch" id="branch">
+          </select>
+          <br>
+        </div>
+        <div class="B">
+          <label>Semsester:</label>
+          <select name = "semester" id="semester">
+
+              <fieldset class="inline-fields sem mb-5">
+                  <h3>Select the Semester</h3>
+                      <div class = "row col-sm-12">
+                          <div class = "row col-sm-12 col-md-12">
+                              <select class="form-control" id="sem_select" name="sem_select">
+                                  <option selected disabled>Please Select the Semester</option>
+                                  <% for(var i = 0; i < sems.length; i++) {%>
+                                    <option value="<%=sems[i]['SEM']%>" id="semid" name="semid"><%=sems[i]['SEM']%> Semester</option>
+                                  <%}%>>
+                              </select>
+                          </div>
+                      </div>
+                </fieldset>
+          </select>
+          <br>
+        </div>
+        <div class="C">
+          <label>Subject Name:</label>
+          <select name="subject" id="sub">
+            <option value="AM1">APPLIED MATHEMATICS</option>
+            <option value= "XYZ">FJKDHFJKHFK</option>
+          </select>
+          <br>
+        </div> -->
+        <div class="D">
+          <label>Date Of Examination:</label>
+          <input type = "date" name = "DOE" id="date">
+          <label>Section:</label>
+          <select name="section" id="section">
+            <option value= "A">A</option>
+            <option value= "B">B</option>
+          </select>
+          <label>Group:</label>
+          <select name = "group" id="group">
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+          <br>
+        </div>
+        <div class="E">
+          <label>Room No.</label>
+          <input type="text" name= "rn" maxlength="5" size="5" id="room">
+          <br>
+        </div>
+        <button id="get_details">Get Details</button>
+
+      </form>
+    </div>
+    </div>
+    </body>
+    <script type="text/javascript">
+
+    </script>
+    <script type="text/javascript" src="/js/index.js"></script>
+</html>
+
