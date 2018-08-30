@@ -131,7 +131,7 @@ router.post('/result', (req, res) => {
 			}
 			// console.warn(resultsArr)
 		// res.send(resultsArr)
-		res.render(__dirname+'/details.ejs', {arrResult = resultsArr})
+		res.render(__dirname+'/details.ejs', {arrResult: resultsArr})
 
 			// console.warn(results)
 			// res.render(results);
