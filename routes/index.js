@@ -1,8 +1,11 @@
 var express = require('express');
 var router = express.Router();
-
+const bodyParser = require('body-parser')
 var path = require("path");
-
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({
+	extended:true,
+}));
 var database = require('../database.js');
 
 /* GET home page. */
@@ -77,16 +80,72 @@ router.get("/api/sem/:sem/:stream" , function(req,res){
 });
 
 router.get("/details/:stream/:sem/:branch/:section/:group/:room/:date" , function(req,res){
-	var query = "SELECT SL , NAME , REGNO FROM 5TH_SEM WHERE " ;
+	console.warn('called')
+	var query = "SELECT SL , NAME , REGNO FROM " + database.tablename +" WHERE STREAM = '" +req.params.stream + "' SEM ='" +req.params.sem + "' BRANCH = '" +req.params.branch + "SEC' AND  '"  + req.params.sec +
+	"GROUP' ="+ req.params.group+";"  ;
 	database.connection.query(query, function (error, results, fields) {
 		console.log(results);
 		if (error) {
 			console.log(error);
 		} else {
-			res.render();
+			let q = ''
+
+			// console.warn(results)
+			// res.render(results);
 		}
 	});
 });
+
+router.post('/result', (req, res) => {
+	let	streamOutput = req.body.stream_select
+		sem = req.body.sem_select,
+		branch = req.body.branch_select,
+		sub = req.body.subject,
+		section = req.body.section,
+		grp = req.body.group,
+		roomNo = req.body.rn;
+	q= 'SELECT SL , NAME , REGNO FROM ' + database.tablename +" WHERE STREAM = '" +streamOutput
+	 + "' and SEM =" +sem + " and BRANCH = '" +branch + "' AND  "  +
+	"GRP ="+grp+";"  ;
+	database.connection.query(q, function (error, results) {
+		console.debug('output from database below')
+		// console.log(results);
+		if (error) {
+			console.error(error);
+		} else {
+			let q ;
+			let resultsArr = [];
+			
+
+			for(let i=0; i<results.length; i++) {
+				obj = {
+					'sl':'',
+					'name':'',
+					'regno':'',
+				};
+				// console.warn(results[i]['SL']);
+				obj.sl =results[i]['SL'] 
+				obj.name =results[i]['NAME'] 
+				obj.regno =results[i]['REGNO'] 
+				resultsArr.push(obj)
+			}
+			// console.warn(resultsArr)
+		// res.send(resultsArr)
+		res.render(__dirname+'/details.ejs', {arrResult = resultsArr})
+
+			// console.warn(results)
+			// res.render(results);
+		}
+	});
+
+	console.warn(q)
+	console.warn(streamOutput + roomNo)
+	;
+	console.warn('working calles')
+
+})
+
+
 
 /*router.get('/api/branch/:stream/:branch', function (req, res) {
 	console.log(req.params.sem);
@@ -99,7 +158,7 @@ router.get("/details/:stream/:sem/:branch/:section/:group/:room/:date" , functio
 			res.send(results);
 		}
 	});
-});*/
+});
 /** 
 router.get('/api/:stream/getsem', function (req, res) {
 	console.log(req.params.stream);

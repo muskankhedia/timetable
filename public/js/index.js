@@ -82,7 +82,7 @@ $(document).ready(function () {
     var room= $("#room").val();
 
     var _url = "/details/" + stream + "/" + sem + "/" + branch + "/" + section + "/" + group + "/" + room  + "/" + date ;
-    location.href = "" ;
+    location.href = "/details" ;
     console.log(_url);  
 
 
