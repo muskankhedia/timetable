@@ -16,7 +16,7 @@ database.connection.connect(function(err) {
 
 
 var index = require('./routes/index');
-var users = require('./routes/result');
+//var users = require('./routes/result');
 var app = express();
 
 // view engine setup
@@ -30,7 +30,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/result', users);
+//app.use('/result', users);
 
 // catch 404 and forward to error handl;er
 app.use(function(req, res, next) {

@@ -8,20 +8,7 @@ router.use(bodyParser.urlencoded({
 }));
 var database = require('../database.js');
 
-/* GET home page. */
 
-
-// router.get('/api/:sem/getbranch', function(req,res){
-// 	var query = 'SELECT BRANCH FROM '+database.tablename+' WHERE Sem = "'+req.params.sem+'" GROUP BY BRANCH;';
-// 	//console.log(query)n
-// 	database.connection.query(query, function(error,results,fields) {
-// 		if(error){
-// 			console.log(error);
-// 		}else{
-// 			res.send(results);
-// 		}
-// 	});
-// });
 router.get('/', function (req, res) {
 	console.log("inside API");
 	console.log("table name - " + database.tablename);
@@ -144,83 +131,6 @@ router.post('/result', (req, res) => {
 	console.warn('working calles')
 
 })
-
-
-
-/*router.get('/api/branch/:stream/:branch', function (req, res) {
-	console.log(req.params.sem);
-	var query = 'SELECT DISTINCT BRANCH FROM ' + database.tablename + ' WHERE SEM = "' + req.params.sem + '" AND STREAM =" ' + req.params.stream + '" GROUP BY BRANCH;';
-	//console.log(query)n
-	database.connection.query(query, function (error, results, fields) {
-		if (error) {
-			console.log(error);
-		} else {
-			res.send(results);
-		}
-	});
-});
-/** 
-router.get('/api/:stream/getsem', function (req, res) {
-	console.log(req.params.stream);
-	var query = 'SELECT SEM FROM ' + database.tablename + ' WHERE STREAM = "' + req.params.stream + '" GROUP BY SEM;';
-	//console.log(query)n
-	database.connection.query(query, function (error, results, fields) {
-		if (error) {
-			console.log(error);
-		} else {
-			res.send(results);
-		}
-	});
-});
-
-router.get('/api/:stream/:sem/getbranch', function (req, res) {
-	console.log(req.params.sem);
-	var query = 'SELECT DISTINCT BRANCH FROM ' + database.tablename + ' WHERE SEM = "' + req.params.sem + '" AND STREAM =" ' + req.params.stream + '" GROUP BY BRANCH;';
-	//console.log(query)n
-	database.connection.query(query, function (error, results, fields) {
-		if (error) {
-			console.log(error);
-		} else {
-			res.send(results);
-		}
-	});
-});
-/** 
-router.get('/api/:stream/:sem/:branch/getsubj', function (req, res) {
-	var query = "Select Subject,Sub_Code FROM " + database.tablename + " WHERE BRANCH = '" + req.params.branch + "' AND SEM = '" + req.params.sem + "' AND STREAM = '" + req.params.stream + "'GROUP BY Subject,Sub_Code;";
-	//console.log(query)
-	database.connection.query(query, function (error, results, fields) {
-		if (error) {
-			console.log(error);
-		} else {
-			//console.log(results);
-			res.send(results);
-		}
-	});
-});
-**/
-/*
-
-router.get('/api/:stream/:sem/:branch/getsection', function (req, res) {
-	var query = "Select SECTION FROM " + database.tablename +  " WHERE SEM = '" + req.params.sem + "' AND STREAM = '" + req.params.stream + "'GROUP BY Subject,Sub_Code;";
-	//console.log(query)
-	database.connection.query(query, function (error, results, fields) {
-		if (error) {
-			console.log(error);
-		} else {
-			//console.log(results);
-			res.send(results);
-		}
-	});
-});
-
-
-
-
-
-**/
-
-
 
 
 

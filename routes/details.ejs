@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <body>
+            <header>
+                    <h1 style="text-align:center">COLLEGE OF ENGINEERING AND TECHNOLOGY,BHUBANESWAR</h1>
+                    <h2 style="text-align: center">ATTENDANCE SHEET</h2>
+            </header>
+            <table>
+                    <thead>
+                            <th>
+                                    SL
+                            </th>
+                            <th>
+                                    Name
+                            </th>
+                            <th>
+                                    Registration Number
+                            </th>
+                            <!-- <th>
+                                    Signature
+                            </th> -->
+                    </thead>
+                    <tbody>
+                            <% for(var i=0; i<arrResult.length; i++){ %>
+                                    <tr>
+                                            <td>
+                                        <%=arrResult[i].sl  %>
+                                </td>
+                                <td>
+                                        <%=arrResult[i].name  %>
+                                </td>
+                                <td>
+                                        <%=arrResult[i].regno  %>
+                                </td>
+                                <!-- <td>
+                                        <%=arrResult.sl  %>
+                                </td> -->
+
+                                    </tr>
+                                
+                             <% } %>
+                            
+                    </tbody>
+            </table>
+    </body>
+    
+</html>
