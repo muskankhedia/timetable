@@ -17,46 +17,27 @@
     <div class="row">
       <div class="col-lg-10 mx-auto">
         <form method="POST" action="/result">
-            <fieldset class="inline-fields stream mb-5">
-              <h3>Select the Stream</h3>
-                  <div class = "row col-sm-12">
-                      <div class = "row col-sm-12 col-md-12">
-                          <select class="form-control" id="stream_select" name="stream_select">
-                              <option selected disabled>Please Select the Semester</option>
+                          <select class="form-control" id="stream_select" name="stream_select" style= "width: 300px;
+                          margin-top: 20px; margin-left: 30px;">
+                              <option selected disabled>Please Select the Stream</option>
                               <% for(var i = 0; i < streams.length; i++) {%>
                                 <option value="<%=streams[i]['STREAM']%>" id="streamid" name="streamid"><%=streams[i]['STREAM']%> Stream</option>
                               <%}%>>
-                          </select>
-                      </div>
-                  </div>
-            </fieldset>
-
-            <fieldset class="inline-fields sem mb-5">
-              <h3>Select the Semester</h3>
-                  <div class = "row col-sm-12">
-                      <div class = "row col-sm-12 col-md-5">
-                          <select class="form-control" id="sem_select" name="sem_select">
+                              </select>
+                          <select class="form-control" id="sem_select" name="sem_select" style= " margin-top: 20px; 
+                           margin-left: 30px; width: 300px;">
                               <option selected disabled>Please Select the Semester</option>
                               <% for(var i = 0; i < sems.length; i++) {%>
                                 <option value="<%=sems[i]['SEM']%>" id="semid" name="semid"><%=sems[i]['SEM']%> Semester</option>
                               <%}%>>
                           </select>
-                      </div>
-                  </div>
-            </fieldset>
-          <fieldset class="inline-fields branch">
-              <h3>Select the Branch</h3>
-                <div class = "row col-sm-12 mb-5">
-                    <div class = "row col-sm-12 col-md-12">
-                        <select class="form-control" id="branch_select" name="branch_select">
+                        <select class="form-control" id="branch_select" name="branch_select"  style= " margin-top: 20px; 
+                        margin-left: 30px; width: 300px;">
                           <option selected disabled>Please Select the Branch</option>
                           <% for(var i = 0; i < branches.length; i++) {%>
                             <option value="<%=branches[i]['BRANCH']%>" id="branchid" name="branchid"><%=branches[i]['BRANCH']%></option>
                           <%}%>>
                         </select>
-                    </div>
-                </div>
-          </fieldset>
           <div class="C">
             <label>Subject Name:</label>
             <select name="subject" id="sub">
@@ -85,7 +66,7 @@
             <input type="text" name= "rn" maxlength="5" size="5" id="room">
             <br>
           </div>
-          <button id="get_details" class="btn btn-primary btn-sm"> Get Details</button>
+          <button id="get_details" class="btn btn-primary btn-sm" style="width:200px;"> Get Details</button>
           
         </form>
     </div>

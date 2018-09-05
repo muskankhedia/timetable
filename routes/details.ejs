@@ -5,6 +5,15 @@
                     <h1 style="text-align:center">COLLEGE OF ENGINEERING AND TECHNOLOGY,BHUBANESWAR</h1>
                     <h2 style="text-align: center">ATTENDANCE SHEET</h2>
             </header>
+            <div >
+                    <p style="text-align:center;"><%=sem %>th Semester 2nd Class Test- 2017-18 </p>
+                    <p><b><%=branch %> Gr- <%=group %></b></p>
+                    <p>
+                            DATE OF EXAMINATION: <%=date %>   Time:              Room No:  <%=roomNo %>
+                    </p>
+                    <p> Subject Code:                    SUBJECT:<%= subject %></p>
+                </div>
+
             <table>
                     <thead>
                             <th>
@@ -16,21 +25,21 @@
                             <th>
                                     Registration Number
                             </th>
-                            <!-- <th>
+                            <th>
                                     Signature
-                            </th> -->
+                            </th>
                     </thead>
                     <tbody>
                             <% for(var i=0; i<arrResult.length; i++){ %>
                                     <tr>
                                             <td>
-                                        <%=arrResult[i].sl  %>
+                                        <%=arrResult.sl  %>
                                 </td>
                                 <td>
-                                        <%=arrResult[i].name  %>
+                                        <%=arrResult.name  %>
                                 </td>
                                 <td>
-                                        <%=arrResult[i].regno  %>
+                                        <%=arrResult.regno  %>
                                 </td>
                                 <!-- <td>
                                         <%=arrResult.sl  %>
