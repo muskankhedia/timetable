@@ -17,66 +17,95 @@
     <div class="row">
       <div class="col-lg-10 mx-auto">
         <form method="POST" action="/result">
-                          <select class="form-control" id="stream_select" name="stream_select" style= "width: 300px;
-                          margin-top: 20px; margin-left: 30px;">
+            <fieldset class="inline-fields stream mb-5" style="padding-top:20px">
+                          <select class="form-control" id="stream_select" name="stream_select"
+                          style="width:300px; margin-left: 30px;">
                               <option selected disabled>Please Select the Stream</option>
                               <% for(var i = 0; i < streams.length; i++) {%>
                                 <option value="<%=streams[i]['STREAM']%>" id="streamid" name="streamid"><%=streams[i]['STREAM']%> Stream</option>
                               <%}%>>
-                              </select>
-                          <select class="form-control" id="sem_select" name="sem_select" style= " margin-top: 20px; 
-                           margin-left: 30px; width: 300px;">
+                          </select>
+            </fieldset>
+
+            <fieldset class="inline-fields sem mb-5" style="padding-top:10px">
+                          <select class="form-control" id="sem_select" name="sem_select" style="width:300px; margin-left: 30px;">
                               <option selected disabled>Please Select the Semester</option>
                               <% for(var i = 0; i < sems.length; i++) {%>
                                 <option value="<%=sems[i]['SEM']%>" id="semid" name="semid"><%=sems[i]['SEM']%> Semester</option>
                               <%}%>>
                           </select>
-                        <select class="form-control" id="branch_select" name="branch_select"  style= " margin-top: 20px; 
-                        margin-left: 30px; width: 300px;">
+            </fieldset>
+
+          <fieldset class="inline-fields branch" style="padding-top:10px">
+                        <select class="form-control" id="branch_select" name="branch_select" style="width:300px; margin-left: 30px;">
                           <option selected disabled>Please Select the Branch</option>
                           <% for(var i = 0; i < branches.length; i++) {%>
                             <option value="<%=branches[i]['BRANCH']%>" id="branchid" name="branchid"><%=branches[i]['BRANCH']%></option>
                           <%}%>>
                         </select>
-          <div class="C">
-            <label>Subject Name:</label>
-            <select name="subject" id="sub">
-              <option value="AM1">APPLIED MATHEMATICS</option>
-              <option value= "XYZ">FJKDHFJKHFK</option>
-            </select>
-            <br>
-          </div> 
-          <div class="D">
-            <label>Date Of Examination:</label>
-            <input type = "date" name = "DOE" id="date">
-            <label>Section:</label>
-            <select name="section" id="section">
-              <option value= "A">A</option>
-              <option value= "B">B</option>
-            </select>
-            <label>Group:</label>
-            <select name = "group" id="group">
-              <option value="1">1</option>
-              <option value="2">2</option>
-            </select>
+          </fieldset>
+
+          <div class="C" class="inline-fields stream mb-5" style="width:330px; margin-left: 15px;">
+            <!-- <label>Subject Name:</label> -->
+                          <select class="form-control" name="subject" id="sub">
+                            <option selected disabled>Please Select the Subject</option>
+                            <option value="AM1">APPLIED MATHEMATICS</option>
+                            <option value= "XYZ">FJKDHFJKHFK</option>
+                        </select>
             <br>
           </div>
-          <div class="E">
-            <label>Room No.</label>
-            <input type="text" name= "rn" maxlength="5" size="5" id="room">
-            <br>
-          </div>
-          <button id="get_details" class="btn btn-primary btn-sm" style="width:200px;"> Get Details</button>
           
-        </form>
+          
+          <div class="D" style="padding-top:10px; margin-left: 10px;">
+                        <label>Date Of Examination:</label>
+                          <input type = "date" name = "DOE" id="date">
+                        <label>Section:</label>
+                          <select  name="section" id="section" style="width:30px;">
+                            <option value= "A">A</option>
+                            <option value= "B">B</option>
+                          </select>
+                        <label>Group:</label>
+                          <select  name = "group" id="group">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                          </select>
+                        <br>
+          </div>
+
+
+          <div class="E" class="form-control" style="padding-top:10px; margin-left: 30px;">
+                      <label>Block</label>
+                        <select name= "block" id="block" >
+                          <option value="A">A</option>
+                          <option value="B">B</option>
+                          <option value="C">C</option>
+                          <option value="D">D</option>
+
+                        <select style="padding-left: 10px;">
+                          <label>Room No.</label>
+                            <input type="text" name="rn" id ="rn" size="4" maxlength="4">
+                        </select>
+                          <label>Slot</label>
+                            <select  name= "slot" id ="slot">
+                              <option value="9:30-10:30">1</option>
+                              <option value="10:30-11:30">2</option>
+                              <option value="11:30-12:30">3</option>
+                              <option value="12:30-1:30">4</option>
+                              <option value="2:30-3:30">5</option>
+                              <option value="3:30-4:30">6</option>
+                            </select>
+                      <br>
+          </div>
+            <button id="get_details" class="btn btn-primary btn-sm" style="width:200px;"> Get Details</button>
+          
+                </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
-</div>
-</section>
-        
-    </div>
-    </div>
-    </body>
+</body>
     <script type="text/javascript">
 
     </script>

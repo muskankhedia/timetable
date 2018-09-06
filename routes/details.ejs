@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+        <style>
+                td {
+                border-bottom:1pt solid black;
+                }
+
+                table{
+                        border-spacing: 40px 0;
+                }
+
+        </style>
+</head>
     <body>
             <header>
-                    <h1 style="text-align:center">COLLEGE OF ENGINEERING AND TECHNOLOGY,BHUBANESWAR</h1>
-                    <h2 style="text-align: center">ATTENDANCE SHEET</h2>
+                    <h1 style="text-align:center; font-size: 15px;margin-top: 10px;">COLLEGE OF ENGINEERING AND TECHNOLOGY,BHUBANESWAR</h1>
+                    <h2 style="text-align: center;font-size: 10px;">ATTENDANCE SHEET</h2>
             </header>
             <div >
-                    <p style="text-align:center;"><%=sem %>th Semester 2nd Class Test- 2017-18 </p>
-                    <p><b><%=branch %> Gr- <%=group %></b></p>
-                    <p>
-                            DATE OF EXAMINATION: <%=date %>   Time:              Room No:  <%=roomNo %>
+                    <p style="text-align:center;padding-top: 0px;"><b><%=sem %>th Semester 2nd Class Test- 2017-18 </b></p>
+                    <p style="text-align:center;"><b><%=branch %> Gr- <%=group %></b></p>
+                    <p style="font-style:Times New Roman;margin-left: 30px;">
+ DATE OF EXAMINATION: <b><%=date %></b> &emsp;&emsp;&emsp; Time:<b><%=time %></b>  &emsp;&emsp;&emsp; Room No: <b><%=block %>-<%=roomNo %></b>
                     </p>
-                    <p> Subject Code:                    SUBJECT:<%= subject %></p>
+                    <p style="margin-left: 30px;"> Subject Code:<b></b>    &emsp;&emsp;&emsp;                SUBJECT:<b><%= subject %></b></p>
                 </div>
 
-            <table>
+            <table style="font-size: 15.5px">
                     <thead>
                             <th>
                                     SL
@@ -31,19 +44,19 @@
                     </thead>
                     <tbody>
                             <% for(var i=0; i<arrResult.length; i++){ %>
-                                    <tr>
+                                    <tr class="border_bottom">
                                             <td>
-                                        <%=arrResult.sl  %>
+                                        <%=arrResult[i].sl  %>
                                 </td>
                                 <td>
-                                        <%=arrResult.name  %>
+                                        <%=arrResult[i].name  %>
                                 </td>
                                 <td>
-                                        <%=arrResult.regno  %>
+                                        <%=arrResult[i].regno  %>
                                 </td>
-                                <!-- <td>
+                                <td style="border-spacing: 10px;">
                                         <%=arrResult.sl  %>
-                                </td> -->
+                                </td>
 
                                     </tr>
                                 

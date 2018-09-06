@@ -90,9 +90,10 @@ router.post('/result', (req, res) => {
 		sub = req.body.subject,
 		section = req.body.section,
 		grp = req.body.group,
+		block = req.body.block,
+		date = req.body.DOE,
+		slot = req.body.slot,
 		roomNo = req.body.rn;
-		date = req.body.DOE;
-		//date = req.body.DOE;
 	q= 'SELECT SL , NAME , REGNO FROM ' + database.tablename +" WHERE STREAM = '" +streamOutput
 	 + "' and SEM =" +sem + " and BRANCH = '" +branch + "' AND  "  +
 	"GRP ="+grp+";"  ;
@@ -118,10 +119,11 @@ router.post('/result', (req, res) => {
 				obj.regno =results[i]['REGNO'] 
 				resultsArr.push(obj)
 			}
-			// console.warn(resultsArr)
+		 console.warn(resultsArr)
 		// res.send(resultsArr)
+		
 		res.render(__dirname+'/details.ejs', {arrResult: resultsArr,
-			semester: sem,subject:sub,group:grp,branch:branch,roomNo:roomNo,date:date})
+			semester: sem,subject:sub,group:grp,branch:branch,roomNo:roomNo,date:date,time:slot,block:block})
 
 			// console.warn(results)
 			// res.render(results);
@@ -131,7 +133,7 @@ router.post('/result', (req, res) => {
 	console.warn(q)
 	console.warn(streamOutput + roomNo)
 	;
-	console.warn('working called')
+	console.warn('working calles')
 
 })
 
